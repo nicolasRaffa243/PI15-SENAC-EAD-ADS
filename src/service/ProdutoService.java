@@ -31,26 +31,26 @@ public class ProdutoService {
         dao.excluirProduto(id);
 
     }
-    
-public boolean validarProduto(Produtos produto) {
 
-    if (produto == null) {
-        return false;
+    public boolean validarProduto(Produtos produto) {
+
+        if (produto == null) {
+            return false;
+        }
+
+        if (produto.getNome() == null || produto.getNome().trim().isEmpty()) {
+            return false;
+        }
+
+        if (produto.getMarca() == null || produto.getMarca().trim().isEmpty()) {
+            return false;
+        }
+
+        if (produto.getValidade() == null || produto.getValidade().trim().isEmpty()) {
+            return false;
+        }
+
+        return true;
     }
-
-    if (produto.getNome() == null || produto.getNome().trim().isEmpty()) {
-        return false;
-    }
-
-    if (produto.getMarca() == null || produto.getMarca().trim().isEmpty()) {
-        return false;
-    }
-
-    if (produto.getValidade() == null || produto.getValidade().trim().isEmpty()) {
-        return false;
-    }
-
-    return true;
-}
 
 }
